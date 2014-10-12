@@ -16,7 +16,7 @@ app.listen(process.env.PORT || 3000,function(){
 var generator=function(){ 
 	cp.fork(__dirname+"/generator.js").on("message",function(m){
 		opt=m
-		setTimeout(generator,5000)
+		setTimeout(generator,1)
 	})
 }
 var protext=function(d,tag1,tag2){
@@ -24,6 +24,9 @@ var protext=function(d,tag1,tag2){
 	var m=d.match(rx)
 	var m=m[1].split("")
 	m.forEach(function(c,i){
+		if(c==" "){
+			c="&#160;"
+		}
 		if(opt.map[c]){
 			m[i]=opt.map[c]
 		}
