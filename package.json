@@ -1,0 +1,17 @@
+{
+  "name": "ProText",
+  "version": "0.0.2",
+  "description": "Protect Your Texts Using Random Font Faces",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Bhaskar Tiwari",
+  "license": "BSD-2-Clause",
+  "dependencies": {
+    "svg2ttf": "~1.2.0",
+    "express": "~4.9.6",
+    "MD5": "~1.2.1"
+  }
+}
