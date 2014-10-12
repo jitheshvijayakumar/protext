@@ -16,7 +16,7 @@ app.listen(process.env.PORT || 3000,function(){
 var generator=function(){ 
 	cp.fork(__dirname+"/generator.js").on("message",function(m){
 		opt=m
-		setTimeout(generator,1)
+		setTimeout(generator,5000)
 	})
 }
 var protext=function(d,tag1,tag2){
