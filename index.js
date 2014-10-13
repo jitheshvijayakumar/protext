@@ -2,14 +2,20 @@ var express=require("express"),
 app=new express(),
 cp=require("child_process"),
 fs=require("fs"),
+cookies=require("cookies"),
 opt
 app.listen(process.env.PORT || 3000,function(){
 	app.use(function(req,res,next){
-		console.log(JSON.stringify(req.headers))
+		var c=new cookies(req,res)
+		c.set("X-VALID","TRUE")
 		if(req.headers.host=="protext.herokuapp.com"){
 			next()
 		}
-		
+	}).use("/static",function(req,res,next){
+		var c=new cookies(req,res)
+		if(c.get("X-VALID")=="TRUE"){
+			next()
+		}
 	}).use("/static",express.static(__dirname+"/static")).use(function(req,res){
 		fs.readFile(__dirname+"/index.htm","utf8",function(e,d){
 			d=d.replace(/%SEED%/g,opt.seed)
