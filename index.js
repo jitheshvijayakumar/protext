@@ -11,11 +11,13 @@ app.listen(process.env.PORT || 3000,function(){
 		if(req.headers.host=="protext.herokuapp.com"){
 			next()
 		}
+		res.end()
 	}).use("/static",function(req,res,next){
 		var c=new cookies(req,res)
 		if(c.get("X-VALID")=="TRUE"){
 			next()
 		}
+		res.end()
 	}).use("/static",express.static(__dirname+"/static")).use(function(req,res){
 		fs.readFile(__dirname+"/index.htm","utf8",function(e,d){
 			d=d.replace(/%SEED%/g,opt.seed)
