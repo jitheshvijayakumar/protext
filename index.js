@@ -4,7 +4,11 @@ cp=require("child_process"),
 fs=require("fs"),
 opt
 app.listen(process.env.PORT || 3000,function(){
-	app.use("/static",express.static(__dirname+"/static")).use(function(req,res){
+	app.use(function(req,res,next){
+		if(req.headers.host=="protext.herokuapp.com" && req.headers.referer=="http://protext.herokuapp.com/"){
+			next()
+		}
+	}).use("/static",express.static(__dirname+"/static")).use(function(req,res){
 		fs.readFile(__dirname+"/index.htm","utf8",function(e,d){
 			d=d.replace(/%SEED%/g,opt.seed)
 			d=protext(d,"<h1>","</h1>")
