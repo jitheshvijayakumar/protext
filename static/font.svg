@@ -5,7 +5,7 @@
 <defs>
 <font id="open_sanslight" horiz-adv-x="1169" >
 <font-face units-per-em="2048" ascent="1638" descent="-410" />
-<missing-glyph horiz-adv-x="532" />
+<missing-glyph horiz-adv-x="1" />
 <glyph unicode="0" d="M1055 735q0 -385 -117.5 -570t-355.5 -185q-229 0 -348 190.5t-119 564.5q0 382 115.5 566t351.5 184q231 0 352 -190.5t121 -559.5zM223 735q0 -340 89 -502.5t270 -162.5q189 0 275.5 168t86.5 497q0 324 -86.5 492t-275.5 168t-274 -168t-85 -492z" />
 <glyph unicode="1" d="M682 0h-98v1065q0 145 12 301q-15 -15 -31 -29t-309 -243l-57 71l397 297h86v-1462z" />
 <glyph unicode="2" d="M1028 0h-915v88l389 406q164 170 230 260t97 172t31 172q0 131 -86 213t-223 82q-183 0 -350 -133l-54 69q183 154 406 154q191 0 300.5 -102t109.5 -281q0 -145 -73.5 -280.5t-268.5 -334.5l-375 -385v-4h782v-96z" />
@@ -70,7 +70,7 @@
 <glyph unicode="z" horiz-adv-x="944" d="M858 0h-776v63l645 936h-598v88h727v-63l-649 -936h651v-88z" />
 <glyph unicode="&#32;" horiz-adv-x="532" />
 <glyph unicode="&#160;" horiz-adv-x="532" />
-<glyph horiz-adv-x="1219" d="M0 0z" />
+<glyph horiz-adv-x="1" d="M0 0z" />
 <hkern u1="&#x22;" u2="&#xf9;" k="61" />
 <hkern u1="&#x22;" u2="&#xf8;" k="123" />
 <hkern u1="&#x22;" u2="&#xf6;" k="123" />
