@@ -5,9 +5,11 @@ fs=require("fs"),
 opt
 app.listen(process.env.PORT || 3000,function(){
 	app.use(function(req,res,next){
-		console.log(req.headers.host)
-		console.log(req.headers.referer)
-		next()
+		console.log(JSON.stringify(req.headers))
+		if(req.headers.host=="protext.herokuapp.com"){
+			next()
+		}
+		
 	}).use("/static",express.static(__dirname+"/static")).use(function(req,res){
 		fs.readFile(__dirname+"/index.htm","utf8",function(e,d){
 			d=d.replace(/%SEED%/g,opt.seed)
